@@ -7,7 +7,7 @@ sqs_client = boto3.client('sqs')
 
 
 def lambda_handler(event, context):
-    sqs_queue_url = 'https://sqs.eu-north-1.amazonaws.com/057745697967/project3upqueue'
+    sqs_queue_url = ''
     email_subject = 'Violation Report'
 
     # Retrieve messages from the SQS queue

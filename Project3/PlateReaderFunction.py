@@ -2,11 +2,11 @@ import boto3
 import json
 
 rekognition_client = boto3.client(
-    'rekognition', region_name='us-west-2', endpoint_url='https://rekognition.us-west-2.amazonaws.com')
+    'rekognition', region_name='us-west-2', endpoint_url='')
 sqs_client = boto3.client('sqs')
 s3 = boto3.client('s3')
 event_bridge = boto3.client('events')
-queue_url = 'https://sqs.eu-north-1.amazonaws.com/057745697967/project3downqueue'
+queue_url = ''
 
 
 def lambda_handler(event, context):
@@ -40,7 +40,7 @@ def lambda_handler(event, context):
             'DateTime': date_time,
             'Type': violation_type
         }
-        event_bus_name = 'arn:aws:events:eu-north-1:057745697967:event-bus/default'
+        event_bus_name = ''
         event_source = 'Plates out of state'
         detail_type = 'violation'
         detail = message_body
